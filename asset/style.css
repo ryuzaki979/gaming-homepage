@@ -1,0 +1,288 @@
+*{
+    margin:  0;
+    padding : 0;
+    box-sizing: border-box;
+}
+:root{
+    --blue: #08f7cf;
+}
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
+*{
+    font-size: 10px;
+    font-family: 'Goldman', cursive;
+    color: white;
+}
+body{
+    background: black;
+}
+
+header ul{
+    width: 50%;
+    margin: auto;
+}
+
+.home{
+    width: 40vw;
+    height: 100vh;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-25%);
+    text-align: center;
+}
+.skeleton{
+    width: 75%;
+    height: 50%;
+    margin: 5rem 0 0rem;
+}
+#eye,#eye_2{
+    stroke: red;
+    stroke-width: 5;
+    stroke-dasharray: 534;
+    stroke-dashoffset: 0;
+    animation: fillin 1s linear infinite alternate;
+    
+}
+
+#circle{
+    stroke: white;
+    stroke-width: 5;
+    stroke-dasharray: 1507;
+    stroke-dashoffset: 2507;
+    animation: fillin 2s linear infinite alternate;
+    
+}
+#nose{
+    stroke: rgb(8, 247, 207);
+    stroke-width: 5;
+    stroke-dasharray: 434;
+}
+#gap, #gap_2{
+    stroke: white;
+    stroke-width: 5;
+    stroke-dasharray: 289;
+    transform: scale(1);
+    animation: dip 1s linear infinite;
+}
+#sgap, #sgap_2{
+    stroke: red;
+    stroke-width: 5;
+    stroke-dasharray: 78;
+}
+
+@keyframes fillin{
+    0%{
+        stroke-dashoffset: 00;
+        stroke: rgb(255, 37, 37);
+    }
+    25%{
+        stroke-dashoffset: 00;
+        stroke: rgb(6, 253, 233);
+    }
+    50%{
+        stroke-dashoffset: 00;
+        stroke: rgb(233, 11, 11);
+    }
+    75%{
+        stroke-dashoffset: 00;
+        stroke: rgb(37, 255, 244);
+    }
+}
+
+.title {
+    position: absolute;
+    width: 100%;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-70%);
+    
+}
+
+.blue,.red{
+    font-size: 5rem;
+    letter-spacing: 2px;
+}
+
+.blue{
+    color: #08f7cf;
+    margin-right: 2rem;
+}
+.red{
+    color: red;
+}
+
+footer{
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%,-15%);
+    width: 50%;
+}
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 900;
+    cursor: pointer;
+    padding: 1rem 0rem;
+    transition:all .5s ease-in;
+}
+li:hover a{
+    color: var(--blue);
+    transform: translateX(1rem);
+}
+
+main{
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.left,.right{
+    
+    position: absolute;
+    width: 30%;
+    min-height: 100vh;
+}
+.left{
+    top: 0;
+    left: 0;
+    border-right: 1px solid;
+}
+.right{
+    top: 0;
+    right: 0;
+    border-left: 1px solid;
+}
+@media (max-width: 1024px){
+    
+    .home, .left, .right{
+        position: unset;
+    }
+    .main{
+        display: grid;
+        grid-template-rows: 2fr 1fr 2fr;
+    }
+    .left{
+        grid-row: 1/2;
+        width: 100%;
+        border: none;
+    }
+    .home{
+        position: relative;
+        grid-row: 2/3;
+        width: 100%;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; */
+    }
+    .right{
+        grid-row: 3/-1;
+        width: 100%;
+    }
+}
+
+
+.logo{
+    width: 100px;
+    margin:1rem  auto;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.about{
+    padding: 2rem;
+}
+
+ h2{
+    font-size: 3rem;
+    color: red;
+    margin: 1rem 5rem;
+}
+ p{
+    margin-left: 8rem;
+    font-size: 1.5rem;
+    /* text-shadow:3px 5px 10px  #ffffff; */
+}
+
+.btn{
+    width: 100%;
+    background: none;
+    border: none;
+    margin: 1rem 0;
+    
+    text-align: center;
+    cursor: pointer;
+}
+.btn a{
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.btn a:hover {
+    color: var(--blue);
+    transform: translateX(1rem);
+}
+
+.img{
+    width:100%;
+    height: 100px;
+}
+.work h2{
+    color: var(--blue);
+}
+
+.work a:hover{
+    color: red;
+}
+
+#bgvid{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.line{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%,-15%);
+}
+
+.line span{
+    display: block;
+    background: var(--blue);
+    width: 15rem;
+    height: 5px;
+    transform-origin: center;
+    transform: rotate(1000deg);
+    animation: rotate 2s linear infinite;
+    
+    
+
+}
+.line span:nth-child(2){
+    background: red;
+    transform: rotate(1000deg);
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+        background: black;
+    }
+}
+.line2{
+    top: 85%;
+    
+}
